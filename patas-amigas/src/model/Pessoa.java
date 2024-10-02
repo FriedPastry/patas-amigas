@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Objects;
 
 public class Pessoa {
@@ -105,7 +107,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "model.Pessoa{" +
                 "idPessoa=" + idPessoa +
                 ", nome='" + nome + '\'' +
                 ", dataNascimento='" + dataNascimento + '\'' +
