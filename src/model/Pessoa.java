@@ -130,14 +130,13 @@ public class Pessoa {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return idPessoa == pessoa.idPessoa && CPF == pessoa.CPF && telefone == pessoa.telefone && isAdotante == pessoa.isAdotante && isTutor == pessoa.isTutor && isFuncionario == pessoa.isFuncionario && Objects.equals(nome, pessoa.nome) && Objects.equals(dataNascimento, pessoa.dataNascimento) && Objects.equals(email, pessoa.email) && Objects.equals(endereco, pessoa.endereco) && Objects.equals(genero, pessoa.genero) && Objects.equals(senha, pessoa.senha);
+        if (!(o instanceof Pessoa pessoa)) return false;
+        return idPessoa == pessoa.idPessoa;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPessoa, nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, isAdotante, isTutor, isFuncionario);
+        return Objects.hash(idPessoa);
     }
 
     @Override
