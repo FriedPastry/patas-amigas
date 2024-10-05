@@ -1,7 +1,5 @@
-import model.Animal;
 import model.Pessoa;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -46,7 +44,7 @@ public class Main {
     }
 
     private static Pessoa criarPessoa(Scanner scanner) {
-        System.out.println("\n--- Criar Nova model.Pessoa ---");
+        System.out.println("\n--- Criar Nova Pessoa ---");
 
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -77,17 +75,17 @@ public class Main {
 
         Pessoa novaPessoa = new Pessoa(idPessoa, nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, false, false, false);
 
-        System.out.println("model.Pessoa criada com sucesso!");
+        System.out.println("Pessoa criada com sucesso!");
         return novaPessoa;
     }
 
     private static void exibirPessoa(Pessoa pessoa) {
-        System.out.println("\n--- Informações da model.Pessoa ---");
+        System.out.println("\n--- Informações da Pessoa ---");
         System.out.println(pessoa.toString());
     }
 
     private static void editarPessoa(Scanner scanner, Pessoa pessoa) {
-        System.out.println("\n--- Editar model.Pessoa ---");
+        System.out.println("\n--- Editar Pessoa ---");
 
         System.out.print("Nome (" + pessoa.getNome() + "): ");
         String nome = scanner.nextLine();
