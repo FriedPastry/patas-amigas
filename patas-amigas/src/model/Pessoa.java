@@ -12,10 +12,14 @@ public class Pessoa {
     private int CPF;
     private int telefone;
     private String senha;
+    private boolean isAdotante;
+    private boolean isTutor;
+    private boolean isFuncionario;
 
     public Pessoa() {}
 
-    public Pessoa(int idPessoa, String nome, String dataNascimento, String email, String endereco, String genero, int CPF, int telefone, String senha) {
+    public Pessoa(int idPessoa, String nome, String dataNascimento, String email, String endereco, String genero, int CPF, int telefone, String senha, boolean isAdotante, boolean isTutor, boolean isFuncionario) {
+        this.idPessoa = idPessoa;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.email = email;
@@ -24,6 +28,9 @@ public class Pessoa {
         this.CPF = CPF;
         this.telefone = telefone;
         this.senha = senha;
+        this.isAdotante = isAdotante;
+        this.isTutor = isTutor;
+        this.isFuncionario = isFuncionario;
     }
 
     // Getters e Setters
@@ -93,21 +100,46 @@ public class Pessoa {
         this.senha = senha;
     }
 
+    public boolean isAdotante() {
+        return isAdotante;
+    }
+
+    public void setAdotante(boolean adotante) {
+        isAdotante = adotante;
+    }
+
+    public boolean isTutor() {
+        return isTutor;
+    }
+
+    public void setTutor(boolean tutor) {
+        isTutor = tutor;
+    }
+
+    public boolean isFuncionario() {
+        return isFuncionario;
+    }
+
+    public void setFuncionario(boolean funcionario) {
+        isFuncionario = funcionario;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Pessoa pessoa)) return false;
-        return idPessoa == pessoa.idPessoa && getCPF() == pessoa.getCPF() && getTelefone() == pessoa.getTelefone() && Objects.equals(getNome(), pessoa.getNome()) && Objects.equals(getDataNascimento(), pessoa.getDataNascimento()) && Objects.equals(getEmail(), pessoa.getEmail()) && Objects.equals(getEndereco(), pessoa.getEndereco()) && Objects.equals(getGenero(), pessoa.getGenero()) && Objects.equals(getSenha(), pessoa.getSenha());
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return idPessoa == pessoa.idPessoa && CPF == pessoa.CPF && telefone == pessoa.telefone && isAdotante == pessoa.isAdotante && isTutor == pessoa.isTutor && isFuncionario == pessoa.isFuncionario && Objects.equals(nome, pessoa.nome) && Objects.equals(dataNascimento, pessoa.dataNascimento) && Objects.equals(email, pessoa.email) && Objects.equals(endereco, pessoa.endereco) && Objects.equals(genero, pessoa.genero) && Objects.equals(senha, pessoa.senha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPessoa, getNome(), getDataNascimento(), getEmail(), getEndereco(), getGenero(), getCPF(), getTelefone(), getSenha());
+        return Objects.hash(idPessoa, nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, isAdotante, isTutor, isFuncionario);
     }
 
     @Override
     public String toString() {
-        return "model.Pessoa{" +
+        return "Pessoa{" +
                 "idPessoa=" + idPessoa +
                 ", nome='" + nome + '\'' +
                 ", dataNascimento='" + dataNascimento + '\'' +
@@ -117,6 +149,9 @@ public class Pessoa {
                 ", CPF=" + CPF +
                 ", telefone=" + telefone +
                 ", senha='" + senha + '\'' +
+                ", isAdotante=" + isAdotante +
+                ", isTutor=" + isTutor +
+                ", isFuncionario=" + isFuncionario +
                 '}';
     }
 }

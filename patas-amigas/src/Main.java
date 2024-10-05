@@ -75,7 +75,7 @@ public class Main {
         // Você pode definir o ID da pessoa conforme necessário (ex: auto-incremento ou geração manual)
         int idPessoa = 1; // Exemplo de ID fixo
 
-        Pessoa novaPessoa = new Pessoa(idPessoa, nome, dataNascimento, email, endereco, genero, CPF, telefone, senha);
+        Pessoa novaPessoa = new Pessoa(idPessoa, nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, false, false, false);
 
         System.out.println("model.Pessoa criada com sucesso!");
         return novaPessoa;
