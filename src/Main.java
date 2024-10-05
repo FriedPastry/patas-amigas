@@ -77,7 +77,31 @@ public class Main {
         System.out.print("Senha: ");
         String senha = scanner.nextLine();
 
-        Pessoa novaPessoa = new Pessoa(nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, false, false, false);
+        String opcaoAdotante = "";
+        boolean isAdotante;
+        do {
+            System.out.print("Adotante (s/n): ");
+            opcaoAdotante = scanner.nextLine();
+            isAdotante = opcaoAdotante.equals("s");
+        } while (!opcaoAdotante.equals("s") && !opcaoAdotante.equals("n"));
+
+        String opcaoTutor = "";
+        boolean isTutor;
+        do {
+            System.out.print("Tutor (s/n): ");
+            opcaoTutor = scanner.nextLine();
+            isTutor = opcaoTutor.equals("s");
+        } while (!opcaoTutor.equals("s") && !opcaoTutor.equals("n"));
+
+        String opcaoFuncionario = "";
+        boolean isFuncionario;
+        do {
+            System.out.print("Funcionário (s/n): ");
+            opcaoFuncionario = scanner.nextLine();
+            isFuncionario = opcaoFuncionario.equals("s");
+        } while (!opcaoFuncionario.equals("s") && !opcaoFuncionario.equals("n"));
+
+        Pessoa novaPessoa = new Pessoa(nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, isAdotante, isTutor, isFuncionario);
 
         System.out.println("Pessoa criada com sucesso!");
         return novaPessoa;
@@ -122,6 +146,38 @@ public class Main {
         System.out.print("Senha (" + pessoa.getSenha() + "): ");
         String senha = scanner.nextLine();
         if (!senha.isEmpty()) pessoa.setSenha(senha);
+
+        // Adotante
+        System.out.print("Adotante (s/n) (" + pessoa.isAdotante() + "): ");
+        String opcaoAdotante = "";
+        boolean isAdotante;
+        do {
+            opcaoAdotante = scanner.nextLine();
+            isAdotante = opcaoAdotante.equals("s");
+        } while (!opcaoAdotante.equals("s") && !opcaoAdotante.equals("n"));
+        pessoa.setAdotante(isAdotante);
+
+        // Tutor
+        System.out.print("Tutor (s/n) (" + pessoa.isTutor() + "): ");
+        String opcaoTutor = "";
+        boolean isTutor;
+        do {
+            opcaoTutor = scanner.nextLine();
+            isTutor = opcaoTutor.equals("s");
+        } while (!opcaoTutor.equals("s") && !opcaoTutor.equals("n"));
+        pessoa.setTutor(isTutor);
+
+        // Funcionário
+        System.out.print("Funcionário (s/n) (" + pessoa.isFuncionario() + "): ");
+        String opcaoFuncionario = "";
+        boolean isFuncionario;
+        do {
+            opcaoFuncionario = scanner.nextLine();
+            isFuncionario = opcaoFuncionario.equals("s");
+        } while (!opcaoFuncionario.equals("s") && !opcaoFuncionario.equals("n"));
+        pessoa.setFuncionario(isFuncionario);
+
+
 
         System.out.println("Informações da pessoa atualizadas com sucesso!");
     }
