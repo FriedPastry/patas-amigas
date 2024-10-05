@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Pessoa {
     private int idPessoa;
+    private static int staticId = 1;
     private String nome;
     private String dataNascimento;
     private String email;
@@ -18,8 +19,10 @@ public class Pessoa {
 
     public Pessoa() {}
 
-    public Pessoa(int idPessoa, String nome, String dataNascimento, String email, String endereco, String genero, int CPF, int telefone, String senha, boolean isAdotante, boolean isTutor, boolean isFuncionario) {
-        this.idPessoa = idPessoa;
+    public Pessoa(String nome, String dataNascimento, String email, String endereco, String genero, int CPF, int telefone, String senha, boolean isAdotante, boolean isTutor, boolean isFuncionario) {
+        this.idPessoa = staticId;
+        staticId++;
+
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.email = email;

@@ -70,10 +70,7 @@ public class Main {
         System.out.print("Senha: ");
         String senha = scanner.nextLine();
 
-        // Você pode definir o ID da pessoa conforme necessário (ex: auto-incremento ou geração manual)
-        int idPessoa = 1; // Exemplo de ID fixo
-
-        Pessoa novaPessoa = new Pessoa(idPessoa, nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, false, false, false);
+        Pessoa novaPessoa = new Pessoa(nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, false, false, false);
 
         System.out.println("Pessoa criada com sucesso!");
         return novaPessoa;
