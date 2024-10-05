@@ -62,10 +62,10 @@ public class Main {
         String genero = scanner.nextLine();
 
         System.out.print("CPF: ");
-        int CPF = scanner.nextInt();
+        String CPF = scanner.nextLine();
 
         System.out.print("Telefone: ");
-        int telefone = scanner.nextInt();
+        String telefone = scanner.nextLine();
 
         System.out.print("Senha: ");
         String senha = scanner.nextLine();
@@ -106,11 +106,11 @@ public class Main {
 
         System.out.print("CPF (" + pessoa.getCPF() + "): ");
         String CPF = scanner.nextLine();
-        if (!CPF.isEmpty()) pessoa.setCPF(Integer.parseInt(CPF));
+        if (!CPF.isEmpty()) pessoa.setCPF(CPF);
 
         System.out.print("Telefone (" + pessoa.getTelefone() + "): ");
         String telefone = scanner.nextLine();
-        if (!telefone.isEmpty()) pessoa.setTelefone(Integer.parseInt(telefone));
+        if (!telefone.isEmpty()) pessoa.setTelefone(telefone);
 
         System.out.print("Senha (" + pessoa.getSenha() + "): ");
         String senha = scanner.nextLine();

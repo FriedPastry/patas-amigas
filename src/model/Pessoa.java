@@ -10,8 +10,8 @@ public class Pessoa {
     private String email;
     private String endereco;
     private String genero;
-    private int CPF;
-    private int telefone;
+    private String CPF;
+    private String telefone;
     private String senha;
     private boolean isAdotante;
     private boolean isTutor;
@@ -19,7 +19,7 @@ public class Pessoa {
 
     public Pessoa() {}
 
-    public Pessoa(String nome, String dataNascimento, String email, String endereco, String genero, int CPF, int telefone, String senha, boolean isAdotante, boolean isTutor, boolean isFuncionario) {
+    public Pessoa(String nome, String dataNascimento, String email, String endereco, String genero, String CPF, String telefone, String senha, boolean isAdotante, boolean isTutor, boolean isFuncionario) {
         this.idPessoa = staticId;
         staticId++;
 
@@ -79,19 +79,19 @@ public class Pessoa {
         this.genero = genero;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
