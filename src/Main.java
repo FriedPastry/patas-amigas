@@ -1,10 +1,16 @@
 import model.Pessoa;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
+    // Creating a list to store every person generated
+    public static List <Pessoa> pessoas = new ArrayList<>();
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         Pessoa pessoa = new Pessoa();
 
@@ -24,6 +30,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     pessoa = criarPessoa(scanner);
+                    pessoas.add(pessoa);
                     break;
                 case 2:
                     exibirPessoa(pessoa);
@@ -77,8 +84,8 @@ public class Main {
     }
 
     private static void exibirPessoa(Pessoa pessoa) {
-        System.out.println("\n--- Informações da Pessoa ---");
-        System.out.println(pessoa.toString());
+        System.out.println("\n--- Lista de pessoas cadastradas ---");
+        pessoas.forEach(System.out::println);
     }
 
     private static void editarPessoa(Scanner scanner, Pessoa pessoa) {
