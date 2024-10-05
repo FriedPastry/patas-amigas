@@ -20,7 +20,7 @@ public class Main {
         while (running) {
             System.out.println("\nEscolha uma opção:");
             System.out.println("1. Criar nova pessoa");
-            System.out.println("2. Exibir informações da pessoa");
+            System.out.println("2. Exibir informações das pessoas");
             System.out.println("3. Editar informações da pessoa");
             System.out.println("4. Sair");
 
@@ -33,7 +33,7 @@ public class Main {
                     pessoas.add(pessoa);
                     break;
                 case 2:
-                    exibirPessoa(pessoa);
+                    exibirPessoas(pessoa);
                     break;
                 case 3:
                     editarPessoa(scanner, pessoa);
@@ -83,7 +83,7 @@ public class Main {
         return novaPessoa;
     }
 
-    private static void exibirPessoa(Pessoa pessoa) {
+    private static void exibirPessoas(Pessoa pessoa) {
         System.out.println("\n--- Lista de pessoas cadastradas ---");
         pessoas.forEach(System.out::println);
     }
