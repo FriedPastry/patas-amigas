@@ -8,7 +8,8 @@ public class Adotante {
     private List<Preferencia> preferencias;
     private List<Adocao> historicoAdocoes;
 
-    // Construtor
+    public Adotante(){}
+
     public Adotante(long numeroIdentificacao, List<Preferencia> preferencias, List<Adocao> historicoAdocoes) {
         this.numeroIdentificacao = numeroIdentificacao;
         this.preferencias = preferencias;
@@ -38,5 +39,14 @@ public class Adotante {
 
     public void setHistoricoAdocoes(List<Adocao> historicoAdocoes) {
         this.historicoAdocoes = historicoAdocoes;
+    }
+
+    @Override
+    public String toString() {
+        return "Adotante{" +
+                "numeroIdentificacao=" + numeroIdentificacao +
+                ", preferencias=" + preferencias +
+                ", historicoAdocoes=" + historicoAdocoes +
+                '}';
     }
 }

@@ -1,4 +1,7 @@
+import model.Adotante;
+import model.Funcionario;
 import model.Pessoa;
+import model.Tutor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,32 +54,43 @@ public class Main {
     }
 
     private static Pessoa criarPessoa(Scanner scanner) {
+        Pessoa novaPessoa = new Pessoa();
         System.out.println("\n--- Criar Nova Pessoa ---");
 
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
+        novaPessoa.setNome(nome);
 
         System.out.print("Data de nascimento: ");
         String dataNascimento = scanner.nextLine();
+        novaPessoa.setDataNascimento(dataNascimento);
 
         System.out.print("Email: ");
         String email = scanner.nextLine();
+        novaPessoa.setEmail(email);
 
         System.out.print("Endereço: ");
         String endereco = scanner.nextLine();
+        novaPessoa.setEndereco(endereco);
 
         System.out.print("Gênero: ");
         String genero = scanner.nextLine();
+        novaPessoa.setGenero(genero);
 
         System.out.print("CPF: ");
         String CPF = scanner.nextLine();
+        novaPessoa.setCPF(CPF);
 
         System.out.print("Telefone: ");
         String telefone = scanner.nextLine();
+        novaPessoa.setTelefone(telefone);
 
         System.out.print("Senha: ");
         String senha = scanner.nextLine();
+        novaPessoa.setSenha(senha);
 
+        // Adotante
+        Adotante adotante;
         String opcaoAdotante = "";
         boolean isAdotante;
         do {
@@ -84,7 +98,13 @@ public class Main {
             opcaoAdotante = scanner.nextLine();
             isAdotante = opcaoAdotante.equals("s");
         } while (!opcaoAdotante.equals("s") && !opcaoAdotante.equals("n"));
+        if (isAdotante) {
+            adotante = new Adotante();
+            novaPessoa.setAdotante(adotante);
+        }
 
+        // Tutor
+        Tutor tutor;
         String opcaoTutor = "";
         boolean isTutor;
         do {
@@ -92,7 +112,13 @@ public class Main {
             opcaoTutor = scanner.nextLine();
             isTutor = opcaoTutor.equals("s");
         } while (!opcaoTutor.equals("s") && !opcaoTutor.equals("n"));
+        if (isTutor) {
+            tutor = new Tutor();
+            novaPessoa.setTutor(tutor);
+        }
 
+        // Funcionário
+        Funcionario funcionario;
         String opcaoFuncionario = "";
         boolean isFuncionario;
         do {
@@ -100,8 +126,10 @@ public class Main {
             opcaoFuncionario = scanner.nextLine();
             isFuncionario = opcaoFuncionario.equals("s");
         } while (!opcaoFuncionario.equals("s") && !opcaoFuncionario.equals("n"));
-
-        Pessoa novaPessoa = new Pessoa(nome, dataNascimento, email, endereco, genero, CPF, telefone, senha, isAdotante, isTutor, isFuncionario);
+        if (isFuncionario) {
+            funcionario = new Funcionario();
+            novaPessoa.setFuncionario(funcionario);
+        }
 
         System.out.println("Pessoa criada com sucesso!");
         return novaPessoa;

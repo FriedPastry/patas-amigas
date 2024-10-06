@@ -9,7 +9,8 @@ public class Tutor {
     private List<Adocao> historicoAdocoes;
 
 
-    //Construtor
+    public Tutor() {}
+
     public Tutor(long numeroIdentificacao, int numeroAnimaisSobCustodia, List<Adocao> historicoAdocoes) {
         this.numeroIdentificacao = numeroIdentificacao;
         this.numeroAnimaisSobCustodia = numeroAnimaisSobCustodia;
@@ -40,5 +41,14 @@ public class Tutor {
 
     public void setHistoricoAdocoes(List<Adocao> historicoAdocoes) {
         this.historicoAdocoes = historicoAdocoes;
+    }
+
+    @Override
+    public String toString() {
+        return "Tutor{" +
+                "numeroIdentificacao=" + numeroIdentificacao +
+                ", numeroAnimaisSobCustodia=" + numeroAnimaisSobCustodia +
+                ", historicoAdocoes=" + historicoAdocoes +
+                '}';
     }
 }
