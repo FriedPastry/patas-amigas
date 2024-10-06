@@ -8,7 +8,7 @@ public class Funcionario {
     private float salario;
     private String departamento;
 
-    //Construtor
+    public Funcionario() {}
 
     public Funcionario(long numeroIdentificacao, String dataContratacao, String cargo, float salario, String departamento) {
         this.numeroIdentificacao = numeroIdentificacao;
@@ -17,6 +17,7 @@ public class Funcionario {
         this.salario = salario;
         this.departamento = departamento;
     }
+
 
     //Getters e Setters
 
@@ -58,5 +59,16 @@ public class Funcionario {
 
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "numeroIdentificacao=" + numeroIdentificacao +
+                ", dataContratacao='" + dataContratacao + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", salario=" + salario +
+                ", departamento='" + departamento + '\'' +
+                '}';
     }
 }

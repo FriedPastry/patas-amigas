@@ -17,6 +17,10 @@ public class Pessoa {
     private boolean isTutor;
     private boolean isFuncionario;
 
+    private Adotante adotante;
+    private Tutor tutor;
+    private Funcionario funcionario;
+
     public Pessoa() {}
 
     public Pessoa(String nome, String dataNascimento, String email, String endereco, String genero, String CPF, String telefone, String senha, boolean isAdotante, boolean isTutor, boolean isFuncionario) {
@@ -127,6 +131,18 @@ public class Pessoa {
         isFuncionario = funcionario;
     }
 
+    public void setAdotante(Adotante adotante) {
+        this.adotante = adotante;
+    }
+
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -148,12 +164,15 @@ public class Pessoa {
                 ", email='" + email + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", genero='" + genero + '\'' +
-                ", CPF=" + CPF +
-                ", telefone=" + telefone +
+                ", CPF='" + CPF + '\'' +
+                ", telefone='" + telefone + '\'' +
                 ", senha='" + senha + '\'' +
                 ", isAdotante=" + isAdotante +
                 ", isTutor=" + isTutor +
                 ", isFuncionario=" + isFuncionario +
+                ", adotante=" + adotante +
+                ", tutor=" + tutor +
+                ", funcionario=" + funcionario +
                 '}';
     }
 }
