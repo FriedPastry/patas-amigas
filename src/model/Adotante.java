@@ -1,28 +1,29 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adotante {
 
-    private long numeroIdentificacao;
-    private List<Preferencia> preferencias;
-    private List<Adocao> historicoAdocoes;
+    private long idAdotante;
+    private List<Preferencia> preferencias = new ArrayList<>();
+    private List<Adocao> historicoAdocoes = new ArrayList<>();
 
     public Adotante(){}
 
-    public Adotante(long numeroIdentificacao, List<Preferencia> preferencias, List<Adocao> historicoAdocoes) {
-        this.numeroIdentificacao = numeroIdentificacao;
+    public Adotante(long idAdotante, List<Preferencia> preferencias, List<Adocao> historicoAdocoes) {
+        this.idAdotante = idAdotante;
         this.preferencias = preferencias;
         this.historicoAdocoes = historicoAdocoes;
     }
 
     // Getters e Setters
-    public long getNumeroIdentificacao() {
-        return numeroIdentificacao;
+    public long getIdAdotante() {
+        return idAdotante;
     }
 
-    public void setNumeroIdentificacao(long numeroIdentificacao) {
-        this.numeroIdentificacao = numeroIdentificacao;
+    public void setIdAdotante(long idAdotante) {
+        this.idAdotante = idAdotante;
     }
 
     public List<Preferencia> getPreferencias() {
@@ -44,7 +45,7 @@ public class Adotante {
     @Override
     public String toString() {
         return "Adotante{" +
-                "numeroIdentificacao=" + numeroIdentificacao +
+                "numeroIdentificacao=" + idAdotante +
                 ", preferencias=" + preferencias +
                 ", historicoAdocoes=" + historicoAdocoes +
                 '}';

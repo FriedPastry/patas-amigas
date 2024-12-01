@@ -1,12 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tutor {
 
     private long numeroIdentificacao;
     private int numeroAnimaisSobCustodia;
-    private List<Adocao> historicoAdocoes;
+    private List<Adocao> historicoAdocoes = new ArrayList<>();
 
 
     public Tutor() {}

@@ -7,6 +7,8 @@ public class Adocao {
     private Tutor tutor;
     private Animal animal;
 
+
+    public Adocao() {}
     public Adocao(long idAdocao, Adotante adotante, Tutor tutor, Animal animal) {
         this.idAdocao = idAdocao;
         this.adotante = adotante;

@@ -3,8 +3,16 @@ package model;
 import java.util.Objects;
 
 public class Pessoa {
-    private int idPessoa;
-    private static int staticId = 1;
+
+    public enum TipoPessoa {
+        ADOTANTE,
+        FUNCIONARIO,
+        TUTOR;
+    }
+    private TipoPessoa tipo;
+
+    private long idPessoa;
+    private static long staticId = 1;
     private String nome;
     private String dataNascimento;
     private String email;
@@ -42,6 +50,18 @@ public class Pessoa {
 
     // Getters e Setters
 
+
+    public TipoPessoa getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoPessoa tipo) {
+        this.tipo = tipo;
+    }
+
+    public long getIdPessoa() {
+        return idPessoa;
+    }
 
     public String getNome() {
         return nome;
@@ -131,12 +151,24 @@ public class Pessoa {
         isFuncionario = funcionario;
     }
 
+    public Adotante getAdotante() {
+        return adotante;
+    }
+
     public void setAdotante(Adotante adotante) {
         this.adotante = adotante;
     }
 
+    public Tutor getTutor() {
+        return tutor;
+    }
+
     public void setTutor(Tutor tutor) {
         this.tutor = tutor;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
     public void setFuncionario(Funcionario funcionario) {
