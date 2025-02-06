@@ -48,4 +48,11 @@ public class PessoaController {
                 .findFirst()
                 .orElseThrow();
     }
+
+    public static Pessoa getByName(String nome) {
+        return pessoas.stream()
+            .filter(pessoa -> pessoa.getNome().equals(nome))
+            .findFirst()
+            .orElseThrow();
+    }
 }

@@ -15,13 +15,15 @@ public class MenuPrincipal extends Menu {
         System.out.println("1. Criar nova pessoa");
         System.out.println("2. Exibir informações das pessoas");
         System.out.println("3. Editar informações da pessoa");
-        System.out.println("4. Sair");
+        System.out.println("4. Filtrar por nome");
+        System.out.println("5. Sair");
 
         Map<Integer, Menu> opcoes = new HashMap<>();
         opcoes.put(1, new MenuCriarPessoa());
         opcoes.put(2, new MenuExibirPessoas());
         opcoes.put(3, new MenuEditarPessoas());
-        opcoes.put(4, new MenuSair());
+        opcoes.put(5, new MenuSair());
+        opcoes.put(4, new MenuFIltrar());
 
         int choice = Integer.parseInt(scanner.nextLine());
         Menu menu;
